@@ -48,4 +48,35 @@
 3. Describa de forma ordenada que rutas toman los paquetes descritos en la pregunta anterior (especificar por donde pasan y en que orden)
 
    En primer lugar, si tiene que el paquete DNS sale del cliente y se dirige hacia el servidor DNS, para luego ser devuelto al cliente. Una vez completo este paso, el cliente manda un paquete de tipo TCP al servidor de destino (en este caso canvas o siding), con el objetivo de confirmar que las conexiones estén bien establecidas. Al igual que antes, una vez que llega al servidor, el paquete se devuelve al cliente. Una vez que llega al cliente, se comienza a enviar el paquete HTTP (que lleva el request) al servidor de destino antes visitado por el paquete TCP, este siempre antecedido por un paquete TCP para volver a confirmar que las conexiones estén correctamente establecidas. Una vez que el HTTP request llega al servidor, este le devuelve el paquete HTTP (response) con la información necesaria para el cleinte, como el código de estado y el cuerpo de la response.
+   Por ejemplo, en el caso de que se genere un paquete de la casa de Lesly:
+   1. Este va a salir de alguno de los dispositivos (PC, laptop o celular)
+   2. Router de la casa
+   3. Router gateway de subred casa Lesly
+   4. Router central
+   5. Router gateway del DNS
+   6. Server DNS (aca se comienza a devolver)
+   7. Router gateway del DNS
+   8. Router central
+   9. Router gateway de subred casa Lesly
+   10. Dispositivo que mandó el package
+   11. Router gateway de subred casa Lesly (aca comienza el envio del package TCP)
+   12. Router central
+   13. Router gateway de subred Canvas Siding
+   14. Switch (dependiendo de a que server quiere llegar el switch toma)
+   15. Server de Canvas o Siding (aca se comienza a devolver)
+   16. Switch (dependiendo de a que server quiere llegar el switch toma)
+   17. Router gateway de subred Canvas Siding
+   18. Router central
+   19. Router gateway de subred casa Lesly
+   20. Dispositivo que mandó el package
+   21. Router gateway de subred casa Lesly (aca comienza el envio del package HTTP)
+   22. Router central
+   23. Router gateway de subred Canvas Siding
+   24. Switch (dependiendo de a que server quiere llegar el switch toma)
+   25. Server de Canvas o Siding (aca se comienza a devolver con HTTP response)
+   26. Switch (dependiendo de a que server quiere llegar el switch toma)
+   27. Router gateway de subred Canvas Siding
+   28. Router central
+   29. Router gateway de subred casa Lesly
+   30. Dispositivo que mandó el package
 
