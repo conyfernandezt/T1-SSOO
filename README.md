@@ -3,7 +3,8 @@
 ## Parte 4.1
 
 1. ¿Cuál es el largo en bits de la dirección IP de destino?
-El largo es de 16 bits
+
+   El largo es de 16 bits
 
 2. ¿Cuál es la dirección IP de origen cuando el paquete se encuentra en el router central y el último dispositivo visitado es el router gateway de la red Casa Lesly?
 El IP de origen en este casa es la router de la casa de Lesly 140.100.2.2
