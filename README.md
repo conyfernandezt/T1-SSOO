@@ -7,10 +7,12 @@
    El largo es de 16 bits
 
 2. ¿Cuál es la dirección IP de origen cuando el paquete se encuentra en el router central y el último dispositivo visitado es el router gateway de la red Casa Lesly?
-El IP de origen en este casa es la router de la casa de Lesly 140.100.2.2
+
+   El IP de origen en este casa es la router de la casa de Lesly 140.100.2.2
 
 3. ¿Cuál es la dirección IP de origen cuando el paquete se encuentra en el router central y el último dispositivo visitado es el router gateway de la red DNS?
-El IP de la dirección de origen en este caso de 9.9.0.2, la cual corresponde al DNS
+
+   El IP de la dirección de origen en este caso de 9.9.0.2, la cual corresponde al DNS
 
 4. Describa, en orden y separado por capas de entrada y salida, todo lo que ocurre con el paquete cuando este se encuentra en el servidor de la red DNS y el último dispositivo visitado es el router gateway de la red DNS.
 
@@ -27,9 +29,11 @@ El IP de la dirección de origen en este caso de 9.9.0.2, la cual corresponde al
 ## Parte 4.2
 
 1. ¿Cuál es el largo en bytes del HTTP Request del paquete HTTP?
-* 32 bytes
+
+   32 bytes
  
 2. Describa que tipos de paquetes se están usando, es decir, decir que tipo de paquete son, por qué se usan estos paquetes y que deben contener.
+
 * DNS: unidad de datos utilizada en la resolución de nombres de dominio en Internet. Paquetes que hace la conexión con el DNS cuando se hace el primer request a algun dominio.
 (https://www.cloudflare.com/es-es/learning/dns/what-is-a-dns-server/)
 * TCP: este tipo de paquete utilizadas para la comunicación confiable y orientada a la conexión entre dos dispositivos en una red, es decir que se está encargado de verificar que la conexión esté correctamente establecida. Los paquetes TCP son usados para para segmentar y enviar datos de manera eficiente y confiable a través de una red. Caracteristicas  importantes:
@@ -42,5 +46,6 @@ El IP de la dirección de origen en este caso de 9.9.0.2, la cual corresponde al
     * Respuesta HTTP: incluyen información como el código de estado HTTP (solicitud existosa o no), cuerpo de la respuesta, entre otros
 
 3. Describa de forma ordenada que rutas toman los paquetes descritos en la pregunta anterior (especificar por donde pasan y en que orden)
-* En primer lugar, si tiene que el paquete DNS sale del cliente y se dirige hacia el servidor DNS, para luego ser devuelto al cliente. Una vez completo este paso, el cliente manda un paquete de tipo TCP al servidor de destino (en este caso canvas o siding), con el objetivo de confirmar que las conexiones estén bien establecidas. Al igual que antes, una vez que llega al servidor, el paquete se devuelve al cliente. Una vez que llega al cliente, se comienza a enviar el paquete HTTP (que lleva el request) al servidor de destino antes visitado por el paquete TCP, este siempre antecedido por un paquete TCP para volver a confirmar que las conexiones estén correctamente establecidas. Una vez que el HTTP request llega al servidor, este le devuelve el paquete HTTP (response) con la información necesaria para el cleinte, como el código de estado y el cuerpo de la response.
+
+   En primer lugar, si tiene que el paquete DNS sale del cliente y se dirige hacia el servidor DNS, para luego ser devuelto al cliente. Una vez completo este paso, el cliente manda un paquete de tipo TCP al servidor de destino (en este caso canvas o siding), con el objetivo de confirmar que las conexiones estén bien establecidas. Al igual que antes, una vez que llega al servidor, el paquete se devuelve al cliente. Una vez que llega al cliente, se comienza a enviar el paquete HTTP (que lleva el request) al servidor de destino antes visitado por el paquete TCP, este siempre antecedido por un paquete TCP para volver a confirmar que las conexiones estén correctamente establecidas. Una vez que el HTTP request llega al servidor, este le devuelve el paquete HTTP (response) con la información necesaria para el cleinte, como el código de estado y el cuerpo de la response.
 
