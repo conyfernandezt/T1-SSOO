@@ -1,5 +1,13 @@
 # T1-SSOO
 
+### Consideraciones importantes
+
+- Conectamos dos switch en la RED UC, porque de otra manera el servidor no podía reconocer las requests que le llegaban al siding.
+- Si las requests no pueden regresar de alguno de los servidores de la RED UC (canvas o siding), simplemente se debe pingear al
+Router Gateway desde dicho servidor. Esto se realiza desde la terminal con el siguiente comando: `ping 130.0.0.1`.
+- Si de casualidad el HomeRouter de la RED Ruz capta a alguno de los dispositivos de la RED Casa Lesly, se puede solucionar simplemente
+apagando y prendiendo el dispositivo para que se desconecten de la RED Ruz y se conecten a su WIFI de casa.
+
 ## Parte 4.1
 
 1. ¿Cuál es el largo en bits de la dirección IP de destino?
